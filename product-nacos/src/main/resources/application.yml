@@ -1,0 +1,21 @@
+server:
+  port: 8023
+
+spring:
+  application:
+    name: product-server
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        #namespace: public  用于做分类
+
+        #ephemeral:false,当false是为永久实例，当服务宕机也不会从服务列表中消失 true是临时实例 用于防止雪崩，
+        #当出现洪峰流量出现，会将不健康实例提供使用，防止服务雪崩
+        #service: 默认取{spring.application.name}
+        #group: 更细的分类管理，默认DEFAULT_GROUP
+        #weight:  按照负载均衡策略，权重越高流量越大
+        #metadata: 元数据，在拉取列表时nacos会得到元数据，需要改写nacos
+
